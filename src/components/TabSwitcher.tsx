@@ -19,9 +19,17 @@ const TabSwitcher = () => {
     return (
         <div className="tab-container">
             <div className="tab-header">
-                <button onClick={() => setActiveTab('home')}>Home</button>
-                <button onClick={() => setActiveTab('profile')}>Profile</button>
-                <button onClick={() => setActiveTab('settings')}>Settings</button>
+                <button 
+                className={activeTab === 'home' ? 'active' : ''}
+                onClick={() => setActiveTab('home')}>Home</button>
+
+                <button 
+                className={activeTab === 'profile' ? 'active' : ''}
+                onClick={() => setActiveTab('profile')}>Profile</button>
+
+                <button 
+                className={activeTab === 'settings' ? 'active' : ''}
+                onClick={() => setActiveTab('settings')}>Settings</button>
             </div>
             <div className="tab-content">{renderContent()}</div>
         </div>
